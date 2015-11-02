@@ -1,4 +1,4 @@
-var root = 'http://clickthisnick.com/me/pinCode/';
+var root = 'PUT YOUR ROOT HERE';
 var app = angular.module("pinCode", []);
 
 app.factory('Api',function($http){
