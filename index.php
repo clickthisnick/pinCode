@@ -24,20 +24,19 @@
    ?>
    <h1> <?php echo $_SESSION['name']; ?> is logged in</h1>
 
-   <button class="default" ng-click="pin.logout()">Logout</button>
+   <button class="btn-primary" ng-click="pin.logout()">Logout</button>
 
    <?php
  } else {
    ?>
 
-
-   <h1>To Login, enter your image and code:</h1>
-   There are two Users:
-
+   <h2>There are two Users:</h2><br>
+   <h3>User 1: Click the dog image and press the buttons - 1, 1, 1 </h3><br>
+   <h3>User 2: Click the flower image and press the buttons - 1, 2, 3, Enter</h3><br>
 
    <hr>
 
-   <h1> Choose Image </2>
+   <h1> Click Your Image </2>
 
     <div ng-repeat="image in pin.ngArrLoop(pin.images,3) track by $index">
       <div class="row">
@@ -73,7 +72,7 @@
 <div ng-if="pin.selectedImage != null">
   <h3> Image Selected: </h3>
   <div class="row">
-    <div class="col-xs-12" "text-center">
+    <div class="col-xs-12 text-center">
       <img class="img-responsive" src="{{pin.getJSONProperty(pin.selectedImage,'imageurl')}}"></img>
     </div>
   </div>
@@ -87,26 +86,26 @@
 
   <div class="row">
 
-    <div class="col-xs-4" "text-center">
+    <div class="col-xs-4 text-center">
 
       <button value="{{pin.ngArrProp(pin.buttons,$index,3,1,'value')}}"
-      class = "btn btn-lg"
+      class = "btn btn-lg btn-primary"
       ng-click="pin.sendButton(pin.ngArrProp(pin.buttons,$index,3,1,'value'))">
       {{pin.ngArrProp(pin.buttons,$index,3,1,'value')}}
     </button>
   </div>
 
-  <div class="col-xs-4" "text-center">
+  <div class="col-xs-4 text-center">
     <button value="{{pin.ngArrProp(pin.buttons,$index,3,2,'value')}}"
-    class = "btn btn-lg"
+    class = "btn btn-lg btn-primary"
     ng-click="pin.sendButton(pin.ngArrProp(pin.buttons,$index,3,2,'value'))">
     {{pin.ngArrProp(pin.buttons,$index,3,2,'value')}}
   </button>
 </div>
 
-<div class="col-xs-4" "text-center">
+<div class="col-xs-4 text-center">
   <button value="{{pin.ngArrProp(pin.buttons,$index,3,3,'value')}}"
-  class = "btn btn-lg"
+  class = "btn btn-lg btn-primary"
   ng-click="pin.sendButton(pin.ngArrProp(pin.buttons,$index,3,3,'value'))">
   {{pin.ngArrProp(pin.buttons,$index,3,3,'value')}}
 </button>
