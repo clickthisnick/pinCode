@@ -1,0 +1,40 @@
+web:
+  image: nginx:latest
+  ports:
+    - "80:80"
+  volumes:
+    - ./frontend:/var/www/html
+    - ./node_modules:/var/www/html/node_modules
+    - ./images:/var/www/html/images
+    - ./api:/var/www/html/api
+    - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  links:
+    - php
+mysql:
+  image: mariadb
+  ports:
+   - "3306:3306"
+  environment:
+   - MYSQL_ROOT_PASSWORD=password
+   - MYSQL_DATABASE=example
+  volumes:
+   - ./data:/tmp
+   - ./database:/var/lib/mysql
+php:
+  build: ./php
+  volumes:
+    - ./frontend:/var/www/html
+    - ./node_modules:/var/www/html/node_modules
+    - ./api:/var/www/html/api
+  links:
+    - mysql
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - "8181:80"
+  links:
+    - mysql
+  environment:
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: password
+    PMA_HOST: mysql

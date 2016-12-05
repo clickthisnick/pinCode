@@ -1,4 +1,3 @@
-
 ajax/connection.php
-
-code.js
+node_modules
+.DS_Store
