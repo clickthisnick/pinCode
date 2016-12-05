@@ -11,11 +11,11 @@ I came up with the idea from security images and the konami code easter egg.
 #Demo
 <a href="http://clickthisnick.com/projects/pinCode/" target="_blank">Click For Demo</a>
 
-#Explaination
+# Explanation
 
 When a user loads the page they are given a unique id.
 
-When a user presses a pincode, their unique id, selected image id and the pincode are all sent to the database. 
+When a user presses a pincode, their unique id, selected image id and the pincode are all sent to the database.
 
 If the image id and pincode match then the user will be authenticated.
 
@@ -23,11 +23,11 @@ A user currently has up to 2 minutes from their previous pincode to enter in ano
 
 This means if I:
 
-1. Select image1 
+1. Select image1
 
-2. Press the button 2 
+2. Press the button 2
 
-3. Wait 1 second 
+3. Wait 1 second
 
 4. Press the button 5
 
@@ -35,13 +35,11 @@ The database will have checked image1 with pincode 2 and image1 with pincode 25 
 
 # To Use
 
-1. Create a database called pinCode
+1. npm install
 
-2. Import the pinCode.sql to get a working demo
+2. docker-compose up
 
-3. Change connection.php file and put in your database username and password
-
-4. In code.js change the root to where you are hosting pinCode on your server
+3. Browse to localhost
 
 # Other
 
