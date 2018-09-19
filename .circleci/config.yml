@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: ubuntu:14.04
+    steps:
+      - checkout
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
