@@ -1,4 +1,7 @@
 # pinCode
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/clickthisnick/pinCode.svg)](https://greenkeeper.io/)
+
 User authentication with pictures and codes.
 
 #Description
